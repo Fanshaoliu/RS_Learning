@@ -159,9 +159,10 @@ class Funk_SVD(object):
         self.Q = model['Q']
         pass
 
+data_path = '/home/liushaofan/RS_Learning/data/'
 
 if __name__ == "__main__":
-    mf = Funk_SVD('ml-1m\\ratings.dat', 6040, 3952, 150)  # path,user_num,item_num,factor
+    mf = Funk_SVD(data_path+'ml-1m/ratings.dat', 6040, 3952, 150)  # path,user_num,item_num,factor
     mf.train()
     mf.save_model()
     rmse = mf.test_rmse()
